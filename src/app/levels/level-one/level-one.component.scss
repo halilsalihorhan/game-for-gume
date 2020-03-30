@@ -1,16 +1,16 @@
 .view {
-    height: 100%;
-    width: 100%;
-    position: relative;
+    height: 60vh;
+    width: 60vh;
+   // position: relative;
 }
 .mazeRow {
-    width: 100%;
-    height: 10%;
+    width: 60vh;
+    height: 6vh;
 }
 .block{
-    width: 5vh;
-    height: 5vh;
-    display: table-cell;
+    width: 6vh;
+    height: 6vh;
+    display: inline-block;
 }
 .block.passive{
     background-color:#000;
