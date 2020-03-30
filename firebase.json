@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/game-for-gume",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

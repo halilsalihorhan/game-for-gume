@@ -1,0 +1,25 @@
+<div class="view" (click) = "controller.focus()">
+    
+    <div class="ceil"></div>
+    <div class="ground"></div>
+    <div  class="pipe">
+      <div class="top"></div>
+      <div class="bottom"></div>
+  </div>
+   <div class="cannon">
+    <div *ngIf = "bird" class="bird" [style.bottom.px] = "bird.y" [style.left.px]= "bird.x">
+      <img src="./assets/bird.svg" alt="">   
+      </div>
+       <div class="stand">
+           
+       </div>
+       <div class="gun" [style.transform] = "'rotate('+cannon.rotation+'deg)'">
+        <div class="visible"></div>
+       
+       </div>
+   </div>
+    
+</div>
+
+<input  (keypress)="onKey($event.key)" (keyup) = "fire($event.key)" type="text" #controller>
+    {{controller.focus()}}

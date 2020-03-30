@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
+  LEVEL = 1;
+
+
+  level(a: number){
+    this.LEVEL = a;
+  }
 }

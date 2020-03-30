@@ -1,0 +1,32 @@
+.block{
+    
+  //  border: 1px solid #000;
+    width: 5vh;
+    height: 5vh;
+    display: flex;
+
+}
+
+.block.passive{
+    background-color:#000;
+}
+.block.pointer{
+    background-image: url("../../../assets/bird.svg") ;
+    background-repeat: no-repeat;
+    transform: scale(-1, 1);
+}
+.block.destination{
+    background-color: #090;
+}
+.mazeCol{
+    display: inline-block;
+}
+
+p{
+    margin: auto;
+}
+
+input{
+    height: 0px;
+    border: none;
+}
