@@ -12,7 +12,6 @@ import { Pipe } from './shapes/pipe';
 })
 export class LevelTwoComponent extends LevelBaseComponent {
   bird: Bird;
-  pipe: Pipe;
   pipes: Pipe[] = [];
   delay = 0;
   isAlive = true;
@@ -20,7 +19,6 @@ export class LevelTwoComponent extends LevelBaseComponent {
   constructor() {
     super();
     this.bird = new Bird();
-
    }
 
    ngOnInit(){
@@ -60,11 +58,20 @@ export class LevelTwoComponent extends LevelBaseComponent {
    }
 
     onKey(event){
+      if(event == "r" || event == "R") this.restart();
       if(this.bird.velocity>=0)
          this.bird.velocity = -80;
       else
         this.bird.velocity-=40;
     }
 
+    private restart(){
+      this.bird = new Bird();
+      this.delay = 0;
+      this.isAlive = true;
+      this.pipes = [];
+      this.score = 0;
+
+    }
  
 }
