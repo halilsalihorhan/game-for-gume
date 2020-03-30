@@ -1,11 +1,6 @@
-<div (click) = "controller.focus()">
+<div class="view" (click) = "controller.focus()">
     <div  *ngFor = "let row of map" class="mazeRow">
-        <div *ngFor = "let each of row" class="mazeCol">
-            <div class="block" [ngClass] = "{'passive': each == '1', 'pointer': each == '2', 'destination': each == '3' }">
-                <p></p>
-    
-            </div>
-        </div>
+        <div *ngFor = "let each of row" class="block" [ngClass] = "{'passive': each == '1', 'pointer': each == '2', 'destination': each == '3' }"></div>
     </div>
     <input  (keyup)="onKey($event.key)" type="text" #controller>
     {{controller.focus()}}

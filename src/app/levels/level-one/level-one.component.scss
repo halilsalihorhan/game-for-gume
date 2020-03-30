@@ -1,12 +1,17 @@
+.view {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.mazeRow {
+    width: 100%;
+    height: 10%;
+}
 .block{
-    
-  //  border: 1px solid #000;
     width: 5vh;
     height: 5vh;
-    display: flex;
-
+    display: table-cell;
 }
-
 .block.passive{
     background-color:#000;
 }
@@ -18,14 +23,6 @@
 .block.destination{
     background-color: #090;
 }
-.mazeCol{
-    display: inline-block;
-}
-
-p{
-    margin: auto;
-}
-
 input{
     height: 0px;
     border: none;
