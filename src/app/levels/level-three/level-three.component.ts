@@ -29,7 +29,7 @@ export class LevelThreeComponent extends LevelBaseComponent {
     setInterval(()=>{
       if(this.bird.y >=5 && this.bird.y<=50 && this.isAlive){ 
         if(this.bird.x >= 56){
-          if(this.bird.y >=24 && this.bird.y<=36)
+          if(this.bird.y >=24 && this.bird.y<=32)
             this.levelUp.emit(1);
         }
         else
