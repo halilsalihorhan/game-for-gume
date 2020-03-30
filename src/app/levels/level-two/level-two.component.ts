@@ -26,7 +26,7 @@ export class LevelTwoComponent extends LevelBaseComponent {
    ngOnInit(){
      
     setInterval(()=>{
-      if(this.bird.y>=50&&this.bird.y<=500&& this.isAlive){
+      if(this.bird.y>=5&&this.bird.y<=50&& this.isAlive){
         this.delay++;
         if(this.delay==70||this.pipes.length>=10){
           this.delay = 0;
@@ -35,7 +35,7 @@ export class LevelTwoComponent extends LevelBaseComponent {
           else 
             this.pipes.push(new Pipe(1));
         }
-         this.bird.move(1.6);
+         this.bird.move(0.16);
          this.pipes.forEach(pipe=>{
            if(pipe.position == this.bird.x){
               
@@ -61,9 +61,9 @@ export class LevelTwoComponent extends LevelBaseComponent {
 
     onKey(event){
       if(this.bird.velocity>=0)
-         this.bird.velocity = -800;
+         this.bird.velocity = -80;
       else
-        this.bird.velocity-=400;
+        this.bird.velocity-=40;
     }
 
  

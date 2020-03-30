@@ -1,13 +1,13 @@
 <div class="view" (click) = "controller.focus()">
-    <div class="bird" [style.top.px] = "bird.y" [style.right.px]= "bird.x">
+    <div class="bird" [style.top.vh] = "bird.y" [style.right.vh]= "bird.x">
     <img src="./assets/bird.svg" alt="">   
     </div>
     <div class="scoreBoard">{{score}}</div>
     <div class="ceil"></div>
     <div class="ground"></div>
-    <div *ngFor = "let each of pipes" class="pipe" [style.right.px] = "each.position-20" >
-        <div class="top" [style.height.px] = "each.height" ></div>
-        <div class="bottom" [style.height.px] = "540-each.height-each.interval"></div>
+    <div *ngFor = "let each of pipes" class="pipe" [style.right.vh] = "each.position-2" >
+        <div class="top" [style.height.vh] = "each.height" ></div>
+        <div class="bottom" [style.height.vh] = "54-each.height-each.interval"></div>
     </div>
     
 </div>

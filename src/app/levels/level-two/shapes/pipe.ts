@@ -1,17 +1,17 @@
 export class Pipe{
 
-    interval = 150;
-    height = 200;
+    interval = 15;
+    height = 20;
     width = 40;
     position = 0;
     constructor(mode: number){
         if(mode == 0)
-            this.height = 50 + Math.random()*300;
+            this.height = 5 + Math.random()*30;
         else
-            this.height = 200;
+            this.height = 20;
 
     }
     move(){
-        this.position += 5;
+        this.position += 0.5;
     }
 }

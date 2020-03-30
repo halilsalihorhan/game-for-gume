@@ -1,7 +1,7 @@
 export class Bird {
-     x = 500;
-     y = 200;
-     velocity = 100;
+     x = 55;
+     y = 30;
+     velocity = 10;
     private time;
     constructor() {
         this.time = new Date().getTime();
