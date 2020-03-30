@@ -1,17 +1,16 @@
 .view{
     position: relative;
-    height: 100%;
+    height: 60vh;
+    width: 60vh;
     background-color: #fff;
     overflow: hidden;
 }
 .bird{
-    width: 40px;
-    height: 40px;
+    width: 4vh;
+    height: 4vh;
     background-color: transparent;
-    border-radius: 20px;
-    position: absolute;
-    
    
+    position: absolute;
     z-index: 9999;
     transform: scale(-1,1);
 }
@@ -19,70 +18,67 @@ input{
     height: 0px;
     border: none;
 }
-
 .ceil{
     position: absolute;
-    width: 100%;
-    height: 55px;
+    width: 60vh;
+    height: 6vh;
     background-color: #090;
 }
-
 .ground{
     position: absolute;
-    bottom: 0px;
-    height: 50px;
-    width: 100%;
+    bottom: 0;
+    height: 6vh;
+    width: 60vh;
     background-color: #090;
 }
 .cannon {
     position: absolute;
-    bottom: 120px;
-    left:60px;
+    bottom: 14.4vh;
+    left:7.2vh;
 }
 .cannon .gun {
     position: absolute;
-    height: 160px;
-    width: 30px;
-    background-color: transparent;
-   
+    height: 16vh;
+    width: 3vh;
+    background-color: transparent; 
     z-index: 99999;
     transform: rotate(30deg);
 }
 .cannon .stand {
     position: absolute;
-    height: 40px;
-    width: 120px;
-    bottom: -100px;
-    border-radius: 20px;
+    height: 4vh;
+    width: 12vh;
+    bottom: -10vh;
+    border-radius: 2vh;
     background-color: #dd6b0e;
-    left: -45px;
+    left: -4.5vh;
     
 }
 .cannon .gun .visible {
-    height: 90px;
+    height: 9vh;
     width: inherit;
     background-color: #424242;
-    border-radius: 7px 7px 15px 15px;
+    border-radius: 0.7vh .7vh 1.5vh 1.5vh;
     z-index: 99999;
 }
 
 .pipe{
-    right:0px;
+    right:0;
 }
 .pipe .top{
     position: absolute;
     right: inherit;
     top:0;
-    width: 10px;
-    height: 200px;
+    width: 1.2vh;
+    height: 24vh;
     background-color: rgb(138, 83, 21);
 }
 .pipe .bottom{
     position: absolute;
     right: inherit;
     bottom:0;
-    width: 10px;
-    height: 200px;
+    width: 1.2vh;
+    height: 24vh;
     background-color: rgb(138, 83, 21);
 }
 

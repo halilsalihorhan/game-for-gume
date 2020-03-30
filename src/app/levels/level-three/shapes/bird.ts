@@ -5,11 +5,11 @@ export class Bird {
     y = 0;
     velocityX = 0;
     velocityY = 0;
-    gravity = 3;
+    gravity = 0.3;
    private time;
    constructor(cannon: Cannon) {
-       this.y = -100 + cannon.height* Math.cos(cannon.rotation*Math.PI/180);
-       this.x = cannon.height* Math.sin(cannon.rotation*Math.PI/180);
+       this.y = 4 + cannon.height* Math.cos(cannon.rotation*Math.PI/180);
+       this.x = 6.4 + cannon.height* Math.sin(cannon.rotation*Math.PI/180);
        this.velocityX = cannon.initial*Math.sin(cannon.rotation*Math.PI/180);
        this.velocityY = cannon.initial* Math.cos(cannon.rotation*Math.PI/180);
        this.time = new Date().getTime();

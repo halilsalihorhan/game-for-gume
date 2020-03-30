@@ -11,37 +11,26 @@ import { Bird } from './shapes/bird';
 export class LevelThreeComponent extends LevelBaseComponent {
   bird: Bird
   cannon: Cannon;
-  delay = 0;
   isAlive = true;
   constructor() {
     super();
     this.cannon = new Cannon();
    }
-
-  ngOnInit() {
-    
-  }
-
+  ngOnInit() {}
   onKey(event) {
     if(event =="w"|| event == "W"|| event == "ArrowUp") this.cannon.increment();
     if(event =="s"|| event == "S" || event == "ArrowDown") this.cannon.decrement();
     if(event == " ") this.cannon.charge();
-    
-
   }
-
   fire(event){
     if(event == " "){
     this.bird = new Bird(this.cannon);
-    this.cannon.initial = 2000;
+    this.cannon.initial = 200;
     setInterval(()=>{
-      if(this.bird.y >=-75 && this.bird.y<=375 && this.isAlive){ 
-        if(this.bird.x >= 465){
-          if(this.bird.y >=75 && this.bird.y<=210){
-            
+      if(this.bird.y >=5 && this.bird.y<=50 && this.isAlive){ 
+        if(this.bird.x >= 56){
+          if(this.bird.y >=24 && this.bird.y<=36)
             this.levelUp.emit(1);
-
-          }
         }
         else
          this.bird.move(); 
@@ -49,11 +38,7 @@ export class LevelThreeComponent extends LevelBaseComponent {
       else{
         this.isAlive == false;
       }
-     
-
     },20);
-  
   }
 }
-  
 }
