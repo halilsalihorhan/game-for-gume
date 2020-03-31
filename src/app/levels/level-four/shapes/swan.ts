@@ -4,7 +4,7 @@ import { EventEmitter } from '@angular/core';
 export class Swan{
     position = 6;
     direction = 0;
-    velocity = 0.4;
+    velocity = 0.5;
     isBlocked = true;
     scores = 0;
     gate:Gate;

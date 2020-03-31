@@ -26,6 +26,12 @@ export class LevelFourComponent extends LevelBaseComponent{
   ngOnInit() {
     this.fish.init();
     setInterval(()=>{
+      if(this.snows.length > 4){
+        this.snows.reverse();
+        this.snows.pop();
+        this.snows.reverse();
+      }
+     
       let snow = new Snow(this.swan)
       this.snows = this.snows.concat(snow);
       snow.init();
