@@ -1,0 +1,135 @@
+.view{
+    height: 60vh;
+    width: 60vh;
+    
+    background: linear-gradient(162deg, rgba(142, 142, 29, 0.589) 0%, rgba(134,136,213,1) 50%, rgba(85,133,143,1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+.snow {
+    position: absolute;
+    width: 3vh;
+    opacity: 30%;
+}
+.cloud .big {
+    position: absolute;
+    width: 50vh;
+    top: -80px;
+    right: 0vh;
+    opacity: 15%;
+}
+.cloud .small {
+    position: absolute;
+    width: 20vh;
+    top: 9vh;
+    right:9vh;
+    opacity: 20%;
+}
+.water{
+    position: absolute;
+    width: 60vh;
+    height: 12vh;
+    bottom: 0;
+    background: linear-gradient(165deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 21%, rgba(6,127,152,1) 100%);
+    opacity: 65%;
+}
+.pipe{
+    left:0;
+    
+}
+.pipe .top{
+    position: absolute;
+    right: inherit;
+    top:0;
+    width: 1.2vh;
+    height: 24vh;
+    background-color: rgb(138, 83, 21);
+}
+.pipe .port {
+    position: absolute;
+    right: inherit;
+    top:24vh;
+    width: 1.2vh;
+    height: 12vh;
+    background-color: rgb(239, 197, 178);
+    
+}
+.pipe .bottom{
+    position: absolute;
+    right: inherit;
+    bottom:0;
+    width: 1.2vh;
+    height: 24vh;
+    background-color: rgb(138, 83, 21);
+}
+
+.exit{
+    right: 0;
+}
+
+.exit .wall{
+    position: absolute;
+    right: inherit;
+    width: 1.2vh;
+
+    height: 36vh;
+    background-color: #6b65a0;
+}
+.exit .gate {
+    position: absolute;
+    right: inherit;
+    width: 1.2vh;
+    top:22vh;
+    height: 28vh;
+    background-color: #a4b5da;
+    border-radius: 0 0 .6vh .6vh;
+}
+
+.exit .gate .invisible {
+    background-color: #6b65a0;
+    height: 13vh;
+}
+.fish{
+    width: 3vh;
+    height: 3vh;
+    background-color: transparent;
+    opacity: 40%;
+    bottom: 4vh;
+    left: 4vh;
+    position: absolute;
+    z-index: 9999;
+    
+}
+.SWAN .swan{
+    width: 6vh;
+    height: 6vh;
+    background-color: transparent;
+    opacity: 100%;
+    bottom: 10vh;
+    left: 4vh;
+    position: absolute;
+    z-index: 9999;
+    
+}
+
+.SWAN .shadow{
+    width: 6vh;
+    height: 6vh;
+    background-color: transparent;
+    opacity: 28%;
+    bottom: 8vh;
+    left: 4vh;
+    position: absolute;
+    z-index: 999;
+    transform: scale(1, -1);
+}
+.swan.right, .fish.right{
+    transform: scale(-1,1);
+}
+.shadow.right{
+    transform: scale(-1, -1) !important;
+}
+input{
+    height: 0px;
+    border: none;
+}

@@ -1,10 +1,7 @@
 import { Component} from '@angular/core';
 import { LevelBaseComponent } from '../level-base/level-base.component';
-
-
 import { Bird } from './shapes/bird';
 import { Pipe } from './shapes/pipe';
-
 @Component({
   selector: 'game-level-two',
   templateUrl: './level-two.component.html',

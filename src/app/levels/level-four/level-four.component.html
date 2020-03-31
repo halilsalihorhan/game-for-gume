@@ -1,1 +1,40 @@
-<p>level-four works!</p>
+<div class="view" (click) = "controller.focus()" >
+    <div class="weather">
+        <div  *ngFor = "let each of snows" class="snow" [style.left.vh] = "each.position" [style.top.vh] = "each.altitude">
+            <img *ngIf = "each.isExist"  src="./assets/flower.svg" alt="">
+        </div>
+    </div>
+    <div class="cloud">
+    <div class="big">
+        <img src="./assets/cloud.svg" alt="">
+    </div>
+    <div class="small">
+        <img src="./assets/cloud.svg" alt="">
+    </div>
+    </div>
+    <div class="water"></div>
+    <div class="pipe">
+        <div class="top"></div>
+        <div class="port"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="exit">
+        <div class="wall"></div>
+        <div class="gate" [style.transform] = "'rotate('+gate.angle + 'deg)'">
+            <div class="invisible"></div>
+        </div>
+    </div>
+    <div class="fish" [style.left.vh] = "fish.position" [style.bottom.vh] = "fish.altitude" [ngClass] = "{'right' : fish.direction == '0'}">
+        <img src="./assets/fish.svg" alt="">
+    </div>
+    <div class="SWAN">
+    <div class="swan" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == '0'}">
+        <img src="./assets/swan.svg" alt="">
+    </div>
+    <div class="shadow" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == '0'}">
+        <img src="./assets/swan.svg" alt="">
+    </div>
+    </div>
+</div>
+<input  (keypress)="keypress($event.key)"  type="text" #controller>
+    {{controller.focus()}}

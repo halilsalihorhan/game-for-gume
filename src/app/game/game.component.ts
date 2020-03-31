@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output  } from '@angular/core';
 })
 export class GameComponent implements OnInit {
   @Output() Level: EventEmitter<number> = new EventEmitter();
-  level = 1;
+  level = 4;
   constructor() { }
 
   ngOnInit() {
