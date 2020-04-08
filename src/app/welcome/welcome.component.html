@@ -1,0 +1,14 @@
+<img src="../../assets/bird-flat.svg" alt="">
+  <div class="text" [style.width.%]=proposition [style.position]=textPosition [style.opacity.%] = opacity>
+<h1><span *ngFor="let letter of TEXT_ONE" [style.opacity.%] = letter.opacity>{{letter.content}}</span></h1>
+
+
+  <h1><span *ngFor="let letter of TEXT_TWO" [style.opacity.%] = letter.opacity>{{letter.content}}</span></h1>
+  <h1><span *ngFor="let letter of TEXT_THREE" [style.opacity.%] = letter.opacity>{{letter.content}}</span></h1>
+</div>
+<div class="button">
+  <h1 (click)="play()">Play</h1>
+  <h1>Levels</h1>
+  <h1>Credit</h1>
+</div>
+

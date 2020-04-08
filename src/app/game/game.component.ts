@@ -12,7 +12,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
   }
-  levelUp(){
+  levelUp() {
     this.level++;
     this.Level.emit(this.level);
   }

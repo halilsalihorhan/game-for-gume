@@ -7,7 +7,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
   @Input() level: number;
-  
   constructor() { }
 
   ngOnInit() {

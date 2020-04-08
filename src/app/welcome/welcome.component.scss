@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "monoton";
+  src: url("../../assets/IndieFlower-Regular.ttf");
+}
+.text {
+  position: absolute;
+  display: block;
+  font-size: 10vh;
+  font-family: "monoton";
+  font-weight: 100;
+  color: #eaa7e8;
+  height: 100vh;
+  background-color: #170000;
+  margin: auto auto;
+  z-index: 999;
+}
+.button {
+  display: block;
+  font-size: 6vh;
+  width: 60%;
+  margin:auto auto;
+  font-family: "monoton";
+  font-weight: 100;
+  color: #ffffff;
+}
+.button h1 {
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+}
+.button h1:hover {
+  color: #424242;
+}
+h1 span {
+  user-select: none;
+}
+img {
+  transform: scale(-2, 2) translate(-25vh,129px) rotate(0deg);
+  position: absolute;
+  opacity: 60%;
+  pointer-events: none;
+}

@@ -7,10 +7,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 1;
+  LEVEL = 0;
+  isIntroduced = true;
+  welcomeOpacity = 100;
+  AreYouWelcome = false;
 
-
-  level(a: number){
+  level(a: number) {
     this.LEVEL = a;
+  }
+  play() {
+    let timer: number;
+    timer = 0;
+    const interval = setInterval(() => {
+      if (timer !== 100) {
+        this.welcomeOpacity--;
+        timer++;
+      } else {
+        this.AreYouWelcome = true;
+      }
+
+    }, 1);
   }
 }
