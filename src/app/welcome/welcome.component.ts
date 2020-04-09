@@ -7,7 +7,7 @@ import {Letter} from './Classes/Letter';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  @Output() Play: EventEmitter<number> = new EventEmitter();
+  @Output() Menu: EventEmitter<number> = new EventEmitter();
   text1 = 'Game';
   text2 = 'For';
   text3 = 'Gume';
@@ -60,7 +60,7 @@ export class WelcomeComponent implements OnInit {
     }, 1);
 }
 play() {
-   this.Play.emit(0);
+   this.Menu.emit(0);
 
 }
 }

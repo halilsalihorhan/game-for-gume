@@ -7,13 +7,42 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 0;
-  isIntroduced = true;
+  LEVEL = 1;
+  isIntroduced = false;
   welcomeOpacity = 100;
   AreYouWelcome = false;
+  texts: string[][] = [[
+    'Hey. There is something just   here. Can you look at this   please.',
+    'I did say to you. Hey do you  listen me???'],
+    [
+      'Hey. There is something just   here. Can you look at this   please.',
+      'I did say to you. Hey do you  listen me???'],
+      [
+      'Hey. There is something just   here. Can you look at this   please.',
+        'I did say to you. Hey do you  listen me???'],
+    [
+      'Hey. There is something just   here. Can you look at this   please.',
+      'I did say to you. Hey do you  listen me???'],
+    [
+      'Hey. There is something just   here. Can you look at this   please.',
+      'I did say to you. Hey do you  listen me???'],
+    [
+      'Hey. There is something just   here. Can you look at this   please.',
+      'I did say to you. Hey do you  listen me???']];
 
   level(a: number) {
+    this.isIntroduced = false;
     this.LEVEL = a;
+  }
+
+  menuClick(lever: number) {
+    if (lever === 0) {
+      this.play();
+    } else if (lever === 1) {
+      this.levels();
+    }
+  }
+  levels() {
   }
   play() {
     let timer: number;
@@ -27,5 +56,8 @@ export class AppComponent {
       }
 
     }, 1);
+  }
+  begin() {
+    this.isIntroduced = true;
   }
 }

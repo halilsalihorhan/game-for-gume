@@ -1,10 +1,10 @@
-<app-welcome *ngIf="!AreYouWelcome" [style.opacity.%] = welcomeOpacity (Play)="play()"></app-welcome>
-<div class="screen">
-  <div class="main">
-    <app-intro *ngIf="!isIntroduced"></app-intro>
-    <app-game *ngIf="isIntroduced" (Level) = "level($event)"></app-game>
+<app-welcome *ngIf="!AreYouWelcome" [style.opacity.%] = welcomeOpacity (Menu)="menuClick($event)"></app-welcome>
+<div *ngIf="AreYouWelcome" class="screen">
+  <app-intro (Return)="begin()" [texts]="texts[LEVEL]" *ngIf="!isIntroduced"></app-intro>
+  <div *ngIf="isIntroduced" class="main">
+    <app-game [level]="LEVEL"  (Level) = "level($event)"></app-game>
   </div>
-  <div class="appendix">
+  <div *ngIf="isIntroduced" class="appendix">
     <appendex-panel [level] = "LEVEL"></appendex-panel>
   </div>
 </div>

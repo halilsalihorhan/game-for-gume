@@ -1,1 +1,10 @@
-<p>intro works!</p>
+<div class="intro">
+  <div class="relative">
+  <div class="text">
+    <h1 class="line" *ngFor="let line of lines">
+      <span *ngFor="let letter of line.content">{{letter.content}}</span>
+    </h1>
+    <h1 class="button" (click)="nextText()" *ngIf="hasNextButton">{{buttonText}}</h1>
+  </div>
+  </div>
+</div>
