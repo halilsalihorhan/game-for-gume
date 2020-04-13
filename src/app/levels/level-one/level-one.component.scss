@@ -10,7 +10,7 @@
 .block{
     width: 6vh;
     height: 6vh;
-    display: inline-block;
+    display: inline-table;
 }
 .block.passive{
     background-color:#000;
@@ -25,5 +25,5 @@
 }
 input{
     height: 0px;
-    border: none;   
+    border: none;
 }

@@ -1,10 +1,20 @@
+@font-face {
+  font-family: "monoton";
+  src: url("../assets/IndieFlower-Regular.ttf");
+}
+@font-face {
+  font-family: "PressStart";
+  src: url("../assets/PressStart2P-Regular.ttf");
+}
 app-welcome {
   width: 100%;
   height: 100vh;
   display: flex;
   position: absolute;
   z-index: 999999999;
-  background-color: #8d2c2c;
+ background-color: #8d2c2c;
+ // background-color: #650d1f;
+
   overflow:hidden;
 }
 
@@ -13,12 +23,14 @@ app-welcome {
     height: 100vh;
     background-color: #424242;
     display: flex;
+  overflow: hidden;
+  position: relative;
 }
 
 .main{
-    width: 80%;
+    width: 50%;
     height: inherit;
-    background-color: #424242;
+    background-color: #696969;
     position: relative;
     display: flex;
 }
@@ -27,29 +39,114 @@ app-game{
     margin: auto;
     width: 60vh;
     height: 60vh;
-    background-color: rgb(168, 116, 116);
+    background-color: #eaa7e8;
     border-radius: 5%;
-    padding: 5%;
+    padding: 5vh;
     display: flex;
+  box-shadow: 5vh 5vh 5vh #000000ad;
 }
 
-.main::after {
+.glitch{
     content: '';
-    z-index: 9999;
-    border-top: 100vh solid transparent;
-    border-bottom: 0vh solid #424242;
-       border-left:20vh solid #424242;
-     position: absolute;
-     left: 100%;
-       border-right: 0vh solid #424242;
+    border-top: 100vh solid #8d2c2c;
+    border-bottom: 0vh solid #696969;
+    border-left:20vh solid #696969;
+  border-left-color: #696969;
+  border-left-style: solid ;
+    border-right: 0vh solid #696969;
 }
 .appendix{
-    width: 20%;
+    width: 50%;
     height: inherit;
-    background-color: #5a1919;
+    background-color:  #8d2c2c;
+
 }
 appendex-panel{
     display: flex;
     width: 100%;
-    height: 40vh;
+    height: 100vh;
+
+}
+
+.menu {
+  margin: 10%;
+  font-family: monoton;
+  color: #ffffff;
+  user-select: none;
+}
+.menu h1 {
+  font-size: 5rem;
+  margin: auto;
+  text-align: center;
+}
+.menu hr {
+  color: #ffffff;
+  border: #ffffff solid 0.2rem;
+  height: 0.5rem;
+}
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:hover {
+  color: #000000;
+
+}
+.opened {
+
+}
+.bottom {
+  bottom: 2vh;
+  position: absolute;
+  width: 40%;
+  text-align: center;
+}
+
+.button{
+  cursor: pointer;
+}
+.button:hover{
+  color: #000000;
+}
+
+.rabbit{
+  left: 2vh;
+  bottom: 2vh;
+  position: absolute;
+  height: 16vh;
+  width: 16vh;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rabbit.reverse {
+  transform: scale(-1, 1);
+}
+.relative{
+  position: relative;
+
+}
+.textCloud {
+  position: absolute;
+  bottom: 20vh;
+  right: 0;
+  background-color: #ff5364a6;
+  min-width: 50vh;
+  max-width: 50vh;
+  border-radius: 2vh 2vh 0 2vh;
+  text-align: center;
+  margin: auto;
+  font-family: PressStart;
+  color: #ffffff;
+
+}
+
+.textCloud .text {
+  padding: 1vh;
+  display: block;
+  position: relative;
+  line-break:auto;
+  line-height: 4vh;
+  user-select: none;
 }

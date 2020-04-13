@@ -7,6 +7,7 @@ import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 })
 export class GameComponent implements OnInit {
   @Output() Level: EventEmitter<number> = new EventEmitter();
+  @Output() Help: EventEmitter<number> = new EventEmitter<number>();
   @Input() level: number;
   constructor() { }
 
@@ -15,6 +16,9 @@ export class GameComponent implements OnInit {
   levelUp() {
     this.level++;
     this.Level.emit(this.level);
+  }
+  help() {
+    this.Help.emit(1);
   }
 
 }

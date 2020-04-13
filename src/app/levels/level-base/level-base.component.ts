@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class LevelBaseComponent implements OnInit {
   @Output() levelUp: EventEmitter<number> = new EventEmitter();
+  @Output() help: EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {

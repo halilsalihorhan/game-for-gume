@@ -1,10 +1,60 @@
 <app-welcome *ngIf="!AreYouWelcome" [style.opacity.%] = welcomeOpacity (Menu)="menuClick($event)"></app-welcome>
+
+
+
+
 <div *ngIf="AreYouWelcome" class="screen">
   <app-intro (Return)="begin()" [texts]="texts[LEVEL]" *ngIf="!isIntroduced"></app-intro>
-  <div *ngIf="isIntroduced" class="main">
-    <app-game [level]="LEVEL"  (Level) = "level($event)"></app-game>
+
+
+  <div *ngIf="isIntroduced" class="main" [style.width.%]=gameWidth >
+    <app-game [level]="LEVEL"  (Level) = "level($event)" (Help)="balloon = true"></app-game>
   </div>
-  <div *ngIf="isIntroduced" class="appendix">
-    <appendex-panel [level] = "LEVEL"></appendex-panel>
+<div *ngIf="isIntroduced" class="glitch" [style.border-left-width.vh]=((gameWidth-80)*0.15)>
+  <div class="relative">
+    <div *ngIf="!menuToggle&&balloon" class="textCloud">
+      <div class="text">
+        <h4>
+          {{balloonTexts[LEVEL]}}
+        </h4>
+      </div>
+
+
+    </div>
+    <img (click)="pop()"  [ngClass]="{'reverse': menuToggle}" class="rabbit" src="./assets/rabbit.svg" alt="">
+
   </div>
+</div>
+
+  <div  *ngIf="isIntroduced" class="appendix">
+    <div class="menu">
+
+      <div class="clickable" (click)="switch()">
+
+        <h1>MENU</h1>
+
+      </div>
+
+      <div *ngIf="menuToggle" class="opened">
+
+        <h1 (click)="mainMenu()" class="button">Main Menu</h1>
+        <h1 (click)="restart()" class="button">Restart</h1>
+        <hr>
+        <h1>Level: {{LEVEL}}</h1>
+        <hr>
+        <div class="bottom">
+
+              <h2>Game For Gume</h2>
+              <h2>All Rights Reserved &reg; - April 2020</h2>
+              <h2>Halil Salih Orhan</h2>
+        </div>
+      </div>
+      <div *ngIf="!menuToggle" class="closed">
+
+      </div>
+    </div>
+
+  </div>
+
+
 </div>

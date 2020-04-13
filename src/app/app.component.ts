@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,31 +7,54 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 1;
+  LEVEL = 5;
+  gameWidth = 300;
   isIntroduced = false;
   welcomeOpacity = 100;
-  AreYouWelcome = false;
-  texts: string[][] = [[
-    'Hey. There is something just   here. Can you look at this   please.',
-    'I did say to you. Hey do you  listen me???'],
+  AreYouWelcome = true;
+  menuToggle = false;
+  balloon = false;
+  balloonTexts = {
+    1: ' W, A, S, D keys help you to move...',
+    2: 'Hold W or S to angle the cannon, space to fire!',
+    3: 'Press R to restart',
+    4: 'Feel the snow'
+  };
+  texts: string[][] = [[],
     [
-      'Hey. There is something just   here. Can you look at this   please.',
-      'I did say to you. Hey do you  listen me???'],
+      'Hey Simurgh...                  Is that you? ',
+      'We all miss,                    Where were you?'],
       [
-      'Hey. There is something just   here. Can you look at this   please.',
-        'I did say to you. Hey do you  listen me???'],
+      'Ohh...                          You found the exit.',
+        'Now it is time to FLY!'],
     [
-      'Hey. There is something just   here. Can you look at this   please.',
-      'I did say to you. Hey do you  listen me???'],
+      'Fly...                           Fly...                        Fly...',
+      'Please, do not hit anything.     OK?'],
     [
-      'Hey. There is something just   here. Can you look at this   please.',
-      'I did say to you. Hey do you  listen me???'],
+      'Wait what?                       Snow',
+      ' How can you fly,                while snowing?'],
     [
-      'Hey. There is something just   here. Can you look at this   please.',
-      'I did say to you. Hey do you  listen me???']];
+      'What is this place?',
+      'You must transform              to continue',
+      '(folding)                        (folding)                     (folding)',
+      'At least,                       you are still a bird']];
+  @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
+    if (event.key === 'r' || event.key === 'R') {
+      this.balloon = false;
+      const temp = this.LEVEL;
+      this.LEVEL = 0;
+      const timeout = setTimeout(() => {
+        this.LEVEL = temp;
+      }, 1);
+      console.log(this.LEVEL);
+    }
+  }
+
+
 
   level(a: number) {
     this.isIntroduced = false;
+    this.balloon = false;
     this.LEVEL = a;
   }
 
@@ -59,5 +82,45 @@ export class AppComponent {
   }
   begin() {
     this.isIntroduced = true;
+  }
+  switch() {
+    this.balloon = false;
+    if (this.gameWidth === 300) {
+
+      const interval = setInterval(() => {
+        this.gameWidth--;
+        if (this.gameWidth === 60) {
+          this.menuToggle = true;
+          clearInterval(interval);
+        }
+      });
+    } else if (this.gameWidth === 60) {
+
+
+      const interval = setInterval(() => {
+        this.menuToggle = false;
+        this.gameWidth++;
+        if (this.gameWidth === 300) {
+          clearInterval(interval);
+        }
+      });
+    }
+  }
+  mainMenu() {
+    this.AreYouWelcome = false;
+    this.isIntroduced = false;
+    this.LEVEL = 1;
+    this.gameWidth = 300;
+    this.welcomeOpacity = 100;
+    this.menuToggle = false;
+  }
+  restart() {
+    this.isIntroduced = false;
+    this.gameWidth = 300;
+    this.welcomeOpacity = 100;
+    this.menuToggle = false;
+  }
+  pop() {
+    this.balloon = this.balloon !== true;
   }
 }
