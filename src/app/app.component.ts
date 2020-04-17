@@ -7,15 +7,17 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 5;
+  LEVEL = 1;
   gameWidth = 300;
+  edges = false;
   isIntroduced = false;
   welcomeOpacity = 100;
-  AreYouWelcome = true;
+  AreYouWelcome = false;
   menuToggle = false;
   balloon = false;
+  isCelebration = false;
   balloonTexts = {
-    1: ' W, A, S, D keys help you to move...',
+    1: 'Press W, A, S, D keys to move...',
     2: 'Hold W or S to angle the cannon, space to fire!',
     3: 'Press R to restart',
     4: 'Feel the snow'
@@ -53,6 +55,11 @@ export class AppComponent {
 
 
   level(a: number) {
+    if (a === 6) {
+      this.AreYouWelcome = true;
+      this.isIntroduced = true;
+      this.isCelebration = true;
+    }
     this.isIntroduced = false;
     this.balloon = false;
     this.LEVEL = a;
@@ -61,13 +68,16 @@ export class AppComponent {
   menuClick(lever: number) {
     if (lever === 0) {
       this.play();
-    } else if (lever === 1) {
-      this.levels();
+    } else if (lever > 0) {
+      this.LEVEL = lever;
+      this.play();
     }
   }
   levels() {
+
   }
   play() {
+    this.isCelebration = false;
     let timer: number;
     timer = 0;
     const interval = setInterval(() => {
@@ -75,6 +85,7 @@ export class AppComponent {
         this.welcomeOpacity--;
         timer++;
       } else {
+        clearInterval(interval);
         this.AreYouWelcome = true;
       }
 
@@ -107,6 +118,7 @@ export class AppComponent {
     }
   }
   mainMenu() {
+    this.edges = false;
     this.AreYouWelcome = false;
     this.isIntroduced = false;
     this.LEVEL = 1;
@@ -122,5 +134,14 @@ export class AppComponent {
   }
   pop() {
     this.balloon = this.balloon !== true;
+  }
+  credits() {
+    this.edges = true;
+    this.AreYouWelcome = false;
+    this.isIntroduced = false;
+    this.LEVEL = 1;
+    this.gameWidth = 300;
+    this.welcomeOpacity = 100;
+    this.menuToggle = false;
   }
 }

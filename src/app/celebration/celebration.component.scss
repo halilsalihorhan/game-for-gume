@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "Lemonada";
+  src: url("../../assets/Lemonada.ttf");
+}
+.browser {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #000000;
+  overflow: hidden;
+}
+.foci {
+  //transform: scale(2) translateX(-20%) translateY(-20%);
+}
+.shade {
+  filter: sepia(0.2) blur(0.5vh);
+
+  position: absolute;
+  background-color: #000000;
+  width: 100%;
+  z-index: 999999;
+}
+.shade.top {
+  top: 0;
+}
+.shade.bottom {
+  bottom: 0;
+}
+.scene {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.screen {
+  filter: sepia(0.2) blur(1vh);
+
+  width: 100%;
+  height: 66%;
+  background: linear-gradient(162deg, rgba(255, 255, 93, 0.589) 0%, #7c7fff 50%, #c3dcc5 100%);
+}
+.horizon {
+  filter: sepia(0.2) blur(0.5vh);
+
+  width: 100%;
+  height: 34%;
+  background: linear-gradient(162deg, rgba(255, 255, 255, 0.589) 0%, #a07d2d 50%, #a5cad2 100%);
+}
+
+.pyramid {
+  filter: sepia(0.2) blur(0.5vh);
+  position: absolute;
+  top: 46vh;
+  width: 30vh;
+  right: 5%;
+}
+.camelCase {
+  position: absolute;
+  width: 15vh;
+  top: 55vh;
+  right: 60vh;
+}
+.camel {
+  width: 20vh;
+  z-index: 9;
+}
+.camelCase .shadow{
+  position: absolute;
+  background-color: #424242;
+  opacity: 40%;
+  width: 25vh;
+  height: 3vh;
+  bottom: 0vh;
+  left: 3vh;
+  border-radius: 189vh/30vh;
+  z-index: 9;
+
+}
+.absurdScene {
+  width: 105vh;
+  height: 53vh;
+  position: absolute;
+  top:24vh;
+  left: 5vh;
+  overflow: hidden;
+}
+.absurd{
+  width: 30vh;
+  height: 53vh;
+  position: absolute;
+  top: 0vh;
+  left:0vh;
+}
+relative {
+  position: relative;
+}
+.penguin {
+  width: 6vh;
+  bottom: 3vh;
+  position: absolute;
+  right: 12vh;
+  z-index: 999;
+}
+.simurghCase {
+  position: absolute;
+  width: 10vh;
+  right: 12vh;
+  bottom: 15vh;
+}
+.simurgh {
+  width: 10vh;
+  position: absolute;
+  z-index: 999;
+  transform: scale(-1, 1);
+}
+.simurghCase .flappyShadow{
+  position: absolute;
+  background-color: #424242;
+  opacity: 40%;
+  width: 11vh;
+  height: 2vh;
+  bottom: -13.5vh;
+  left: 3vh;
+  border-radius: 189vh/30vh;
+  z-index: 9;
+
+}
+.cloud{
+  filter: brightness(0.9) contrast(0.2) ;
+}
+.absurd .shadow {
+  position: absolute;
+  background-color: #424242;
+  opacity: 40%;
+  width: 30vh;
+  height: 5vh;
+  bottom: 1vh;
+  right: -7vh;
+  border-radius: 189vh/30vh;
+  z-index: 9;
+
+}
+
+.snow {
+  position: absolute;
+  width: 3vh;
+}
+.snowed {
+  position: absolute;
+  background-color: #039be5;
+  opacity: 40%;
+  width: 30vh;
+  height: 6vh;
+  bottom: 0vh;
+  left: 0vh;
+  border-radius: 189vh/30vh;
+  z-index: 9;
+  filter: sepia(0.2) blur(0.5vh);
+
+}
+.dialog {
+  position: absolute;
+  min-width: 26vh;
+  //height: 10vh;
+  bottom: 25vh;
+  left: -17vh;
+  border-radius: 2vh;
+  background-color: #ff980161;
+  box-shadow: 3px 2px #9e7676;
+  display: block;
+
+}
+.text {
+  padding: 1vh;
+  text-align: center;
+  font-family: Lemonada;
+  color: #223e2f;
+}
+.boltCase{
+  position: absolute;
+  width: 15vh;
+  top: 20vh;
+  left: 7vh;
+  overflow: hidden;
+}
+.invert {
+  filter: invert(1);
+}

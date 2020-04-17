@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Letter} from './Classes/Letter';
 
 @Component({
@@ -6,8 +6,10 @@ import {Letter} from './Classes/Letter';
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit, OnDestroy {
   @Output() Menu: EventEmitter<number> = new EventEmitter();
+  @Input() credits: boolean;
+  levelsMenu = false;
   text1 = 'Game';
   text2 = 'For';
   text3 = 'Gume';
@@ -18,10 +20,20 @@ export class WelcomeComponent implements OnInit {
   TEXT_ONE: Letter[] = [new Letter('.')];
   TEXT_TWO: Letter[] = [new Letter('.')];
   TEXT_THREE: Letter[] = [new Letter('.')];
+  intervals = [];
+  scroll = 0;
   constructor() {
+  }
+  ngOnDestroy(): void {
+    this.intervals.forEach((interval) => {
+      clearInterval(interval);
+    });
   }
 
   ngOnInit() {
+    if (this.credits) {
+      this.credit();
+    }
     let timer: number;
     timer = 0;
     const intervalTheFirst = setInterval(() => {
@@ -62,5 +74,22 @@ export class WelcomeComponent implements OnInit {
 play() {
    this.Menu.emit(0);
 
+}
+levels(level: number) {
+    this.Menu.emit(level);
+}
+credit() {
+    this.credits = true;
+    this.scroll = 50;
+    this.intervals.push(setInterval(() => {
+      this.scroll -= 0.1;
+      if (this.scroll < -225) {
+        this.ngOnDestroy();
+      }
+    }, 10));
+}
+return() {
+    this.ngOnDestroy();
+    this.credits = false;
 }
 }

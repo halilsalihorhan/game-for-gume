@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Line} from './classes/Line';
 
 @Component({
@@ -6,39 +6,40 @@ import {Line} from './classes/Line';
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.scss']
 })
-export class IntroComponent implements OnInit {
+export class IntroComponent implements OnInit, OnDestroy {
   @Input() texts: string[];
   @Output() Return: EventEmitter<number> = new EventEmitter();
   lines: Line[] = [new Line(), new Line()];
   textCount = 0;
   hasNextButton = false;
   buttonText = 'Next...';
-
+  interval;
   constructor() { }
 
   ngOnInit() {
     this.init();
   }
-
-
+  ngOnDestroy() {
+    clearInterval(this.interval);
+  }
   init() {
     this.lines[0].add(' ');
     let letterCount: number;
     letterCount = 0;
     let pointer: number;
     pointer = 1;
-    const interval = setInterval(() => {
+    this.interval = setInterval(() => {
       this.lines[pointer].add(this.texts[this.textCount].charAt(letterCount));
       if (letterCount === this.texts[this.textCount].length) {
         this.hasNextButton = true;
-        clearInterval(interval);
+        clearInterval(this.interval);
       }
       letterCount++;
       if (letterCount % 30 === 0) {
         this.lines.push(new Line());
         pointer++;
         if (pointer === 18) {
-          clearInterval(interval);
+          clearInterval(this.interval);
         }
       }
 

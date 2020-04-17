@@ -1,0 +1,55 @@
+<div class="browser" (click)="click()">
+<div class="scene" >
+
+  <div class="shade top" [style.height.%]=shade></div>
+    <div class="screen"></div>
+    <div class="horizon"></div>
+  <div class="shade bottom" [style.height.%]=shade></div>
+
+
+
+<div class="foci">
+<img src="../../assets/pyramid.svg" alt="" class="pyramid">
+<div class="camelCase">
+  <div class="relative">
+    <div *ngIf="dialog.visible" class="dialog">
+      <div class="text">
+        {{dialog.content[dialog.mark]}}
+      </div></div>
+    <img src="../../assets/camel.svg" alt="" class="camel">
+    <div class="shadow"></div>
+  </div>
+</div>
+
+
+
+<div class="absurdScene">
+  <div *ngIf="hero == 0">
+  <img *ngFor = "let snow of snows" src="../../assets/flower.svg" alt="" class="snow" [ngStyle]="snow.style">
+  <div class="snowed" [style.width.vh]="snowed + 40" [style.left.vh]="melted" ></div>
+  </div>
+  <div class="absurd" [style.left.vh] = scene [ngClass]="{'invert': bolt.invert}">
+    <div class="relative">
+      <div  *ngIf="hero == 1" class="simurghCase">
+      <div class="simurgh" [style.bottom.vh]=simurgh.bottom>
+        <img *ngIf="!simurgh.flapped" src="../../assets/bird.svg" alt="" >
+        <img *ngIf="simurgh.flapped"src="../../assets/bird-flap.svg" alt="" >
+      </div>
+      <div class="flappyShadow" [style.left.vh]="6 - simurgh.bottom/5"></div>
+      </div>
+      <div *ngIf="hero == 0">
+
+      <div *ngIf="bolt.exists" class="boltCase" [style.top.vh]=bolt.top>
+          <img src="../../assets/bolt.svg" alt="" class="bolt">
+        </div>
+        <img src="../../assets/cloud.svg" alt="" class="cloud">
+        <img src="../../assets/penguin.svg" alt="" class="penguin">
+        <div class="shadow"></div>
+    </div>
+  </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>

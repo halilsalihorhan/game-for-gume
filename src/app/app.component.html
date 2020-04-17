@@ -1,8 +1,8 @@
-<app-welcome *ngIf="!AreYouWelcome" [style.opacity.%] = welcomeOpacity (Menu)="menuClick($event)"></app-welcome>
+
+<app-welcome *ngIf="!AreYouWelcome" [style.opacity.%] = welcomeOpacity (Menu)="menuClick($event)" [credits]="edges"></app-welcome>
 
 
-
-
+<div *ngIf="!isCelebration">
 <div *ngIf="AreYouWelcome" class="screen">
   <app-intro (Return)="begin()" [texts]="texts[LEVEL]" *ngIf="!isIntroduced"></app-intro>
 
@@ -57,4 +57,8 @@
   </div>
 
 
+</div>
+</div>
+<div *ngIf="isCelebration">
+  <app-celebration (end)="credits()"></app-celebration>
 </div>

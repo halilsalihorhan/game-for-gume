@@ -25,19 +25,20 @@ export class LevelOneComponent extends LevelBaseComponent {
    }
 
   ngOnInit() {
+    this.help.emit(1);
   }
 
   onKey(key: any){
-  
+
     if(key == "ArrowDown" || key == "S" || key == "s") this.pointerMove(1, 0);
     if(key == "ArrowUp" || key == "W" || key == "w") this.pointerMove(-1, 0);
     if(key == "ArrowLeft" || key == "A" || key == "a") this.pointerMove(0, -1);
     if(key == "ArrowRight" || key == "D" || key == "d") this.pointerMove(0, 1);
-    
+
   }
 
   pointerMove(a, b){
-    
+
      var X = this.pointer.x + a;
      var Y = this.pointer.y + b;
      if(this.map[X][Y] == 3) this.levelUp.emit(1);
@@ -47,8 +48,8 @@ export class LevelOneComponent extends LevelBaseComponent {
       this.pointer.x = X;
       this.pointer.y = Y;
     }
-    
+
   }
 
-  
+
 }

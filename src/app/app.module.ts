@@ -6,6 +6,8 @@ import { PanelComponent } from './panel/panel.component';
 import { GameComponent } from './game/game.component';
 import { IntroComponent } from './intro/intro.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LevelsMenuComponent } from './levels-menu/levels-menu.component';
+import { CelebrationComponent } from './celebration/celebration.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     GameComponent,
     IntroComponent,
     WelcomeComponent,
+    LevelsMenuComponent,
+    CelebrationComponent,
    
   ],
   imports: [

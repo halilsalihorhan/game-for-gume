@@ -15,6 +15,7 @@
   z-index: 999;
 }
 .button {
+  z-index: 9;
   display: block;
   font-size: 6vh;
   width: 60%;
@@ -23,13 +24,13 @@
   font-weight: 100;
   color: #ffffff;
 }
-.button h1 {
+.button h1, h4, h5, h6 {
   text-align: center;
   cursor: pointer;
   user-select: none;
 
 }
-.button h1:hover {
+.button h1:hover, h5:hover, h4:hover  {
   color: #424242;
 }
 h1 span {
@@ -40,4 +41,29 @@ img {
   position: absolute;
   opacity: 60%;
   pointer-events: none;
+}
+
+.levels {
+  z-index: 99;
+  background-color: #2204047a;
+  width: 60vh;
+  height: 60vh;
+  margin: auto;
+  border-radius: 3vh;
+}
+
+.credits {
+  z-index: 99;
+  position: relative;
+  background-color: #2204047a;
+  width: 60vh;
+  height: 60vh;
+  margin: auto;
+  border-radius: 3vh;
+  overflow: hidden;
+}
+.scrolling {
+  position: absolute;
+  width: 100%;
+  top:0vh;
 }

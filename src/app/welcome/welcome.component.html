@@ -7,8 +7,71 @@
   <h1><span *ngFor="let letter of TEXT_THREE" [style.opacity.%] = letter.opacity>{{letter.content}}</span></h1>
 </div>
 <div class="button">
-  <h1 (click)="play()">Play</h1>
-  <h1>Levels</h1>
-  <h1>Credit</h1>
+  <div *ngIf="!levelsMenu&&!credits" class="menu">
+    <h1 (click)="play()">Play</h1>
+    <h1 (click)="levelsMenu = true;">Levels</h1>
+    <h1 (click)="credit()">Credit</h1>
+  </div>
+
+  <div *ngIf="levelsMenu" class="levels">
+    <h4 (click)="this.levelsMenu = false;"> < LEVELS</h4>
+    <div>
+      <h5>---------------</h5>
+    <h5 (click)="levels(1)">The Simurgh</h5>
+    <h5 (click)="levels(2)">First Flight</h5>
+    <h5 (click)="levels(3)">Yet Another Flappy</h5>
+    <h5 (click)="levels(4)">Feel The Snow</h5>
+    <h5 (click)="levels(5)">King Penguin</h5>
+      <h5>---------------</h5>
+
+    </div>
+  </div>
+  <div (click)="return()" *ngIf="credits" class="credits" >
+    <div class="scrolling" [style.top.vh]=scroll>
+      <h6>Project Manager</h6>
+      <h6>-------------------------------</h6>
+      <h6>Halil Salih Orhan</h6>
+      <br>
+      <h6>Game Design</h6>
+      <h6>-------------------------------</h6>
+      <h6>Halil Salih Orhan</h6>
+      <br>
+      <h6>Game Concept</h6>
+      <h6>-------------------------------</h6>
+      <h6>Halil Salih Orhan</h6>
+      <br>
+      <h6>SVG Licenses</h6>
+      <h6>-------------------------------</h6>
+      <h6>FlatIcon.com</h6>
+      <br>
+      <h6>Beta Testers</h6>
+      <h6>-------------------------------</h6>
+      <h6>Halil Salih Orhan</h6>
+      <h6>Elif Akalın</h6>
+      <h6>Sabri Mete Akyüz</h6>
+      <h6>Talip Akalın</h6>
+      <h6>Zehra Beyza Kırıcı</h6>
+      <h6>Şefik Palazoğlu</h6>
+
+      <br>
+      <h6>Game Engine Development</h6>
+      <h6>-------------------------------</h6>
+      <h6>Halil Salih Orhan</h6>
+      <br>
+      <h6>Built on </h6>
+      <h6>-------------------------------</h6>
+      <h6>Angular CLI</h6>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h6>Game For Gume</h6>
+      <h6>-------------------------------</h6>
+      <h6>All Rights Reserved - April 2020</h6>
+      <br>
+
+    </div>
+  </div>
 </div>
 
