@@ -17,53 +17,49 @@ export class LevelTwoComponent extends LevelBaseComponent {
     super();
     this.bird = new Bird();
    }
-
-   ngOnInit(){
-
-    setInterval(()=>{
-      if(this.bird.y>=5&&this.bird.y<=50&& this.isAlive){
+   ngOnInit() {
+    setInterval(() => {
+      if (this.bird.y >= 5 && this.bird.y <= 50 && this.isAlive) {
         this.delay++;
-        if(this.delay==70||this.pipes.length>=10){
+        if (this.delay === 70 || this.pipes.length >= 10) {
           this.delay = 0;
-          if(this.pipes.length<=8)
+          if (this.pipes.length <= 8) {
             this.pipes.push(new Pipe(0));
-          else
+          } else {
             this.pipes.push(new Pipe(1));
+          }
         }
-         this.bird.move(0.16);
-         this.pipes.forEach(pipe=>{
-           if(pipe.position == this.bird.x){
+        this.bird.move(0.16);
+        this.pipes.forEach(pipe => {
+           if (pipe.position === this.bird.x) {
 
-            if(this.bird.y <= pipe.height || this.bird.y  >= pipe.interval +pipe.height )
+            if (this.bird.y <= pipe.height  || this.bird.y - 2  >= pipe.interval + pipe.height ) {
+                console.log(this.bird, pipe);
                 this.isAlive = false;
-            else{
+            } else {
               this.score++;
-              if(this.score == 35) this.levelUp.emit(1);
+              if (this.score === 35) { this.levelUp.emit(1); }
             }
-
            }
-           pipe.move()
-         })
-      }
-      else{
+           pipe.move();
+         });
+      } else {
         this.help.emit(1);
-        this.isAlive == false;
+        this.isAlive = false;
       }
-
-
-    },20);
-
+    }, 20);
    }
 
-    onKey(event){
-      if(event == "r" || event == "R") this.restart();
-      if(this.bird.velocity>=0)
+    onKey(event) {
+      if (event === 'r' || event === 'R') { this.restart(); }
+      if (this.bird.velocity >= 0) {
          this.bird.velocity = -80;
-      else
-        this.bird.velocity-=40;
+      } else {
+        this.bird.velocity -= 40;
+      }
     }
 
-    private restart(){
+    private restart() {
       this.bird = new Bird();
       this.delay = 0;
       this.isAlive = true;
