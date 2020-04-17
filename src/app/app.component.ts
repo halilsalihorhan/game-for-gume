@@ -7,7 +7,7 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 3;
+  LEVEL = 5;
   gameWidth = 300;
   edges = false;
   isIntroduced = true;

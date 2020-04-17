@@ -1,0 +1,18 @@
+<div class="view"  [ngStyle] = "view.styleSheet" >
+    <div class="end" *ngIf="map.finalized == false">
+        <div class="theEnd"><p>The End</p> </div>
+    </div>
+    <div style="position: relative;">
+        <div *ngFor = "let heart of hearts" [ngStyle] = "heart.styleSheet"></div>
+    </div>
+    <div class="map" [ngStyle] = "map.styleSheet" [style.top.vh] = "-viewX" [style.left.vh] = "-viewY" >
+       <div style="position: relative;">
+         <div *ngFor = "let water of waters" [ngStyle] = "water.styleSheet"></div>
+
+         <div *ngFor = "let shape of shapes" [ngStyle] = "shape.styleSheet"></div>
+
+       </div>
+    </div>
+
+
+</div>

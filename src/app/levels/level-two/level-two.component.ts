@@ -34,7 +34,6 @@ export class LevelTwoComponent extends LevelBaseComponent {
            if (pipe.position === this.bird.x) {
 
             if (this.bird.y <= pipe.height  || this.bird.y - 2  >= pipe.interval + pipe.height ) {
-                console.log(this.bird, pipe);
                 this.isAlive = false;
             } else {
               this.score++;
