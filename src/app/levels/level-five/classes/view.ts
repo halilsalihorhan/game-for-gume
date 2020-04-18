@@ -8,7 +8,7 @@ export class View{
         "height": this.height + "vh",
         "background-color": "#fff",
         "z-index": "9",
-       // "overflow" : "hidden"
+        "overflow" : "hidden"
     }
     constructor(){
 

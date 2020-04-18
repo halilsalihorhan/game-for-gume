@@ -83,7 +83,7 @@ credit() {
     this.scroll = 50;
     this.intervals.push(setInterval(() => {
       this.scroll -= 0.1;
-      if (this.scroll < -225) {
+      if (this.scroll < -230) {
         this.ngOnDestroy();
       }
     }, 10));

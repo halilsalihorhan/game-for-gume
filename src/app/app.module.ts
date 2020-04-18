@@ -8,6 +8,7 @@ import { IntroComponent } from './intro/intro.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LevelsMenuComponent } from './levels-menu/levels-menu.component';
 import { CelebrationComponent } from './celebration/celebration.component';
+import { MusicComponent } from './music/music.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CelebrationComponent } from './celebration/celebration.component';
     WelcomeComponent,
     LevelsMenuComponent,
     CelebrationComponent,
+    MusicComponent,
    
   ],
   imports: [

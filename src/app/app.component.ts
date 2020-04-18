@@ -7,12 +7,12 @@ import {Component, HostListener} from '@angular/core';
 })
 export class AppComponent {
   title = 'game-for-gume';
-  LEVEL = 5;
+  LEVEL = 1;
   gameWidth = 300;
   edges = false;
-  isIntroduced = true;
+  isIntroduced = false;
   welcomeOpacity = 100;
-  AreYouWelcome = true;
+  AreYouWelcome = false;
   menuToggle = false;
   balloon = false;
   isCelebration = false;
@@ -20,7 +20,8 @@ export class AppComponent {
     1: 'Press W, A, S, D keys to move...',
     2: 'Hold W or S to angle the cannon, space to fire!',
     3: 'Press R to restart',
-    4: 'Feel the snow'
+    4: 'Feel the snow',
+    5: 'Sorry about bugs and glitches'
   };
   texts: string[][] = [[],
     [

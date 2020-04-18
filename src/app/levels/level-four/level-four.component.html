@@ -24,14 +24,14 @@
             <div class="invisible"></div>
         </div>
     </div>
-    <div class="fish" [style.left.vh] = "fish.position" [style.bottom.vh] = "fish.altitude" [ngClass] = "{'right' : fish.direction == '0'}">
+    <div class="fish" [style.left.vh] = "fish.position" [style.bottom.vh] = "fish.altitude" [ngClass] = "{'right' : fish.direction == 0}">
         <img src="./assets/fish.svg" alt="">
     </div>
     <div class="SWAN">
-    <div class="swan" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == '0'}">
+    <div class="swan" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == 0}">
         <img src="./assets/swan.svg" alt="">
     </div>
-    <div class="shadow" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == '0'}">
+    <div class="shadow" [style.left.vh] = "swan.position" [ngClass] = "{'right' : swan.direction == 0}">
         <img src="./assets/swan.svg" alt="">
     </div>
     </div>

@@ -1,4 +1,4 @@
-<div class="view">
+<div class="view" (click) = "controller.focus()">
     <div class="bird" [style.top.vh] = "bird.y" [style.right.vh]= "bird.x">
     <img src="./assets/bird.svg" alt="">
     </div>
@@ -12,3 +12,5 @@
 
 </div>
 
+<input  (keyup)="onKey($event.key)" type="text" #controller>
+    {{controller.focus()}}

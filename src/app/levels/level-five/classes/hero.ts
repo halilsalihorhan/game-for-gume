@@ -52,9 +52,7 @@ export class Hero extends Shape {
         if (this.velocity > 1) {
         this.velocity = 1;
       }
-        if (this.velocity < -1) {
-        this.velocity = -1;
-      }
+
     }
     lift() {
       this.acceleration -= 0.1;
@@ -65,8 +63,10 @@ export class Hero extends Shape {
     jump() {
        const a =  setInterval(() => {
             if (!this.heroCanFall()) {
+              if (this.positionX < 85 || this.positionX >= 165) {
                 this.velocity = -5;
-                }
+              }
+            }
             clearInterval(a);
         });
 
@@ -92,7 +92,7 @@ export class Hero extends Shape {
       this.diving = 0;
     if (this.heroCanSwim()) {
       this.angle = this.angle;
-      this.positionX--;
+      this.positionX -= 2;
     }
   }
 
@@ -123,9 +123,11 @@ export class Hero extends Shape {
         }
         this.lift();
         } else {
-        this.angle = 0;
-        this.adjust = 0;
-        this.diving = 0;
+        if (this.positionX < 85 || this.positionX >= 165) {
+          this.angle = 0;
+          this.adjust = 0;
+          this.diving = 0;
+        }
       }
       if (this.heroCanFall()) {
         this.fall();
